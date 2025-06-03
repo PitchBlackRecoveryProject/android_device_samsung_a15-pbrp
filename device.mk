@@ -1,28 +1,36 @@
-#
-# Copyright (C) 2024 The Android Open Source Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
+LOCAL_PATH := device/samsung/a15
 
-# Fastbootd
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
+# Health HAL
 PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service \
+    libhealthd.$(PRODUCT_PLATFORM) \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
-# Boot control HAL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-mtkimpl \
-    android.hardware.boot@1.2-mtkimpl.recovery
+# EROFS Tools
+PRODUCT_HOST_PACKAGES_ENG += \
+    liberofs \
+    mkfs.erofs \
+    make_erofs \
+    dump.erofs \
+    fsck.erofs
 
-# Health Hal
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
-    
 # MTK plpath utils
 PRODUCT_PACKAGES += \
     mtk_plpath_utils \
     mtk_plpath_utils.recovery
     
-# Dynamic partitions
+PRODUCT_PACKAGES += shrink bxhsed
+
+# Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 31
+
+# API
+PRODUCT_SHIPPING_API_LEVEL := 32
+
