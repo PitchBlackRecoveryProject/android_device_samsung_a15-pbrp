@@ -166,3 +166,9 @@ TW_CUSTOM_CLOCK_POS := 300
 TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery/capacity"
 TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
+
+#PB FLAGS
+PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
+PB_TORCH_PATH := "/sys/devices/virtual/camera/flash/rear_flash"
+PB_TORCH_MAX_BRIGHTNESS := 1
