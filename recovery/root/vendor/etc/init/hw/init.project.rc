@@ -4,6 +4,7 @@ import /vendor/etc/init/hw/init.sec.rc
 # MTK project .rc configure
 
 on early-init
+#	write /sys/class/udc/musb-hdrc/device/cmode 3
 
 on init
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
@@ -33,17 +34,13 @@ on post-fs-data
     chmod 0660 /dev/BU64745GWZAF
     chown system camera /dev/BU64745GWZAF
 
-#Camera OIS
-    chown system radio /sys/class/camera/ois/selftest
-    chown system radio /sys/class/camera/ois/calibrationtest
-    chown system radio /sys/class/camera/ois/ois_power
-    chown system radio /sys/class/camera/ois/ois_rawdata
-    chown system radio /sys/class/camera/ois/oisfw
-    chown system radio /sys/class/camera/ois/autotest
-    chown system radio /sys/class/camera/ois/ois_set_mode
-    chown system radio /sys/class/camera/ois/ois_gain_rear
-    chown system radio /sys/class/camera/ois/ois_supperssion_ratio_rear
-    chown system radio /sys/class/camera/ois/check_ois_valid
+    #Create TP_MFNR mount point
+    chown root system /vendor/etc/tp_mfnr/
+    chmod 0771 /vendor/etc/tp_mfnr/
+
+    #Create TP_SFNR mount point
+    chown root system /vendor/etc/tp_sfnr/
+    chmod 0771 /vendor/etc/tp_sfnr/
 
 #SMB
     chown system system /proc/smb/ScreenComm

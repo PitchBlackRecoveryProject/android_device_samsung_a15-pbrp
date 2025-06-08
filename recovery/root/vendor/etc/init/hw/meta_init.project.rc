@@ -2,6 +2,8 @@ import /vendor/etc/init/hw/init.mtkgki.rc
 
 #INTERNAL_START
 on early-init
+#	write /sys/module/musb_hdrc/parameters/musb_force_on 1
+#	write /sys/class/udc/musb-hdrc/device/cmode 3
 
 on post-fs
 

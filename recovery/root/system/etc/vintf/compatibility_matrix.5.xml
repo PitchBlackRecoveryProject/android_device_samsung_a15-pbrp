@@ -1,11 +1,11 @@
 <!--
     Input:
-        compatibility_matrix.5.xml
-        matrix_kernel_config_r_4.14.xml
-        matrix_kernel_config_r_4.19.xml
-        matrix_kernel_config_r_5.4.xml
+        hardware/interfaces/compatibility_matrices/compatibility_matrix.5.xml
+        out/soong/.intermediates/kernel/configs/r/android-4.14/kernel_config_r_4.14/matrix_kernel_config_r_4.14.xml
+        out/soong/.intermediates/kernel/configs/r/android-4.19/kernel_config_r_4.19/matrix_kernel_config_r_4.19.xml
+        out/soong/.intermediates/kernel/configs/r/android-5.4/kernel_config_r_5.4/matrix_kernel_config_r_5.4.xml
 -->
-<compatibility-matrix version="5.0" type="framework" level="5">
+<compatibility-matrix version="8.0" type="framework" level="5">
     <hal format="hidl" optional="true">
         <name>android.hardware.atrace</name>
         <version>1.0</version>
@@ -233,7 +233,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="false">
+    <hal format="hidl" optional="true">
         <name>android.hardware.graphics.mapper</name>
         <version>2.1</version>
         <version>3.0</version>
@@ -312,8 +312,18 @@
         <version>1.0-1</version>
         <interface>
             <name>IComponentStore</name>
+            <instance>software</instance>
             <regex-instance>default[0-9]*</regex-instance>
             <regex-instance>vendor[0-9]*_software</regex-instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.media.c2</name>
+        <version>1.0</version>
+        <interface>
+            <name>IConfigurable</name>
+            <instance>default</instance>
+            <instance>software</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -360,7 +370,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="false">
+    <hal format="aidl" optional="true">
         <name>android.hardware.power</name>
         <interface>
             <name>IPower</name>
@@ -392,6 +402,7 @@
         <interface>
             <name>ISap</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -493,17 +504,9 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.usb</name>
-        <version>1.0-2</version>
+        <version>1.0-3</version>
         <interface>
             <name>IUsb</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.usb.gadget</name>
-        <version>1.0-1</version>
-        <interface>
-            <name>IUsbGadget</name>
             <instance>default</instance>
         </interface>
     </hal>

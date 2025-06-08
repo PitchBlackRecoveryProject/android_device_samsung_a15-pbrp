@@ -1,10 +1,10 @@
 <!--
     Input:
-        compatibility_matrix.7.xml
-        matrix_kernel_config_t_5.10.xml
-        matrix_kernel_config_t_5.15.xml
+        hardware/interfaces/compatibility_matrices/compatibility_matrix.7.xml
+        out/soong/.intermediates/kernel/configs/t/android-5.10/kernel_config_t_5.10/matrix_kernel_config_t_5.10.xml
+        out/soong/.intermediates/kernel/configs/t/android-5.15/kernel_config_t_5.15/matrix_kernel_config_t_5.15.xml
 -->
-<compatibility-matrix version="5.0" type="framework" level="7">
+<compatibility-matrix version="8.0" type="framework" level="7">
     <hal format="hidl" optional="true">
         <name>android.hardware.atrace</name>
         <version>1.0</version>
@@ -48,6 +48,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.automotive.audiocontrol</name>
+        <version>1-2</version>
         <interface>
             <name>IAudioControl</name>
             <instance>default</instance>
@@ -240,7 +241,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="false">
+    <hal format="hidl" optional="true">
         <name>android.hardware.gatekeeper</name>
         <version>1.0</version>
         <interface>
@@ -261,20 +262,6 @@
         <version>2</version>
         <interface>
             <name>IGnss</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.gnss.measurement_corrections</name>
-        <interface>
-            <name>IMeasurementCorrectionsInterface</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.gnss.visibility_control</name>
-        <interface>
-            <name>IGnssVisibilityControl</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -375,7 +362,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>android.hardware.light</name>
-        <version>2</version>
+        <version>1-2</version>
         <interface>
             <name>ILights</name>
             <instance>default</instance>
@@ -386,8 +373,18 @@
         <version>1.0-2</version>
         <interface>
             <name>IComponentStore</name>
+            <instance>software</instance>
             <regex-instance>default[0-9]*</regex-instance>
             <regex-instance>vendor[0-9]*_software</regex-instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.media.c2</name>
+        <version>1.0</version>
+        <interface>
+            <name>IConfigurable</name>
+            <instance>default</instance>
+            <instance>software</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -464,7 +461,7 @@
     </hal>
     <hal format="aidl" optional="false">
         <name>android.hardware.power</name>
-        <version>2-3</version>
+        <version>2-5</version>
         <interface>
             <name>IPower</name>
             <instance>default</instance>
@@ -483,10 +480,12 @@
         <interface>
             <name>ISap</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
+    <hal format="hidl" optional="false">
         <name>android.hardware.radio.config</name>
+        <version>1.1</version>
         <interface>
             <name>IRadioConfig</name>
             <instance>default</instance>
@@ -568,13 +567,6 @@
             <name>ISecureElement</name>
             <regex-instance>SIM[1-9][0-9]*</regex-instance>
             <regex-instance>eSE[1-9][0-9]*</regex-instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.security.dice</name>
-        <interface>
-            <name>IDiceDevice</name>
-            <instance>default</instance>
         </interface>
     </hal>
     <hal format="aidl" optional="true">
@@ -708,14 +700,6 @@
         <name>android.hardware.usb</name>
         <interface>
             <name>IUsb</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.usb.gadget</name>
-        <version>1.0-2</version>
-        <interface>
-            <name>IUsbGadget</name>
             <instance>default</instance>
         </interface>
     </hal>

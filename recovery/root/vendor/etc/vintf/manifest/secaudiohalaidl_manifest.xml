@@ -1,0 +1,8 @@
+<!-- SEC_AUDIO_COMMON -->
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>vendor.samsung.hardware.audio</name>
+        <version>1</version>
+        <fqname>ISecAudioHal/default</fqname>
+    </hal>
+</manifest>

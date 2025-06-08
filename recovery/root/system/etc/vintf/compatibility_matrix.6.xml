@@ -1,11 +1,11 @@
 <!--
     Input:
-        compatibility_matrix.6.xml
-        matrix_kernel_config_s_4.19.xml
-        matrix_kernel_config_s_5.4.xml
-        matrix_kernel_config_s_5.10.xml
+        hardware/interfaces/compatibility_matrices/compatibility_matrix.6.xml
+        out/soong/.intermediates/kernel/configs/s/android-4.19/kernel_config_s_4.19/matrix_kernel_config_s_4.19.xml
+        out/soong/.intermediates/kernel/configs/s/android-5.4/kernel_config_s_5.4/matrix_kernel_config_s_5.4.xml
+        out/soong/.intermediates/kernel/configs/s/android-5.10/kernel_config_s_5.10/matrix_kernel_config_s_5.10.xml
 -->
-<compatibility-matrix version="5.0" type="framework" level="6">
+<compatibility-matrix version="8.0" type="framework" level="6">
     <hal format="hidl" optional="true">
         <name>android.hardware.atrace</name>
         <version>1.0</version>
@@ -14,7 +14,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="false">
+    <hal format="hidl" optional="true">
         <name>android.hardware.audio</name>
         <version>6.0</version>
         <version>7.0</version>
@@ -261,7 +261,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="false">
+    <hal format="hidl" optional="true">
         <name>android.hardware.graphics.mapper</name>
         <version>2.1</version>
         <version>3.0</version>
@@ -339,8 +339,18 @@
         <version>1.0-2</version>
         <interface>
             <name>IComponentStore</name>
+            <instance>software</instance>
             <regex-instance>default[0-9]*</regex-instance>
             <regex-instance>vendor[0-9]*_software</regex-instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.media.c2</name>
+        <version>1.0</version>
+        <interface>
+            <name>IConfigurable</name>
+            <instance>default</instance>
+            <instance>software</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -431,6 +441,7 @@
         <interface>
             <name>ISap</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">

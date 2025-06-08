@@ -286,7 +286,7 @@ on post-fs-data
     # Set SELinux security contexts on upgrade or policy update.
     # restorecon_recursive /mnt/vendor/nvdata
     restorecon -R -F /mnt/vendor/nvdata
-    restorecon -R -F /mnt/vendor/nvcfg
+    restorecon -R -F /mnt/vendor/nvcfgAdd commentMore actions
     restorecon -R -F /mnt/vendor/protect_f
     restorecon -R -F /mnt/vendor/protect_s
 
@@ -356,6 +356,7 @@ on post-fs-data
     chown system system /sys/class/mdnie/mdnie/bypass
     chown system system /sys/class/mdnie/mdnie/mdnie_ldu
     chown system system /sys/class/mdnie/mdnie/hdr
+    chown system system /sys/class/mdnie/mdnie/vividness
 
 # GPS
     chmod 0775 /vendor/xbin/MPED
@@ -470,6 +471,7 @@ on post-fs-data
     chmod 0660 /dev/grip_sensor_sub
     chown system system /dev/grip_sensor_sub
 
+    chown system radio /sys/class/sensors/ssp_sensor/grip_fail
     chown system radio /sys/class/sensors/grip_sensor/noti_enable
     chown system radio /sys/class/sensors/grip_sensor/motion
     chown system radio /sys/class/sensors/grip_sensor/unknown_state
@@ -489,7 +491,6 @@ on post-fs-data
     chown system radio /sys/class/sensors/grip_sensor/body_threshold
     chown system radio /sys/class/sensors/grip_sensor/grip_flush
     chown system radio /sys/class/sensors/grip_sensor/irq_count
-    chown system radio /sys/class/sensors/grip_sensor/irq_count_b
     chown system radio /sys/class/sensors/grip_sensor/resolution
     chown system radio /sys/class/sensors/grip_sensor/adc_filt
     chown system radio /sys/class/sensors/grip_sensor/useful_filt
@@ -499,13 +500,9 @@ on post-fs-data
     chown system radio /sys/class/sensors/grip_sensor/diff_avg_ch2
     chown system radio /sys/class/sensors/grip_sensor/normal_threshold_ch2
     chown system radio /sys/class/sensors/grip_sensor/sampling_freq_ch2
-    chown system radio /sys/class/sensors/grip_sensor/ch_count
-    chown system radio /sys/class/sensors/grip_sensor/rawfilt_ch2
-    chown system radio /sys/class/sensors/grip_sensor/irq_count_ch2
     chown system radio /sys/class/sensors/grip_sensor/mcc
     chown system radio /sys/class/sensors/grip_sensor/hysteresis
     chown system radio /sys/class/sensors/grip_sensor/sampling_freq
-    chown system radio /sys/class/sensors/grip_sensor/sampling_freq_b
     chown system radio /sys/class/sensors/grip_sensor/isum
     chown system radio /sys/class/sensors/grip_sensor/scan_period
     chown system radio /sys/class/sensors/grip_sensor/analog_gain
@@ -514,7 +511,26 @@ on post-fs-data
     chown system radio /sys/class/sensors/grip_sensor/temp_enable
     chown system radio /sys/class/sensors/grip_sensor/cml
     chown system radio /sys/class/sensors/grip_sensor/grip_ref_cap
-    chown system radio /sys/class/sensors/grip_sensor/grip_ref_cap_2ch
+    chown system radio /sys/class/sensors/grip_sensor/analog_gain_b
+    chown system radio /sys/class/sensors/grip_sensor/avg_negfilt_b
+    chown system radio /sys/class/sensors/grip_sensor/avg_posfilt_b
+    chown system radio /sys/class/sensors/grip_sensor/avg_thresh_b
+    chown system radio /sys/class/sensors/grip_sensor/closedeb_b
+    chown system radio /sys/class/sensors/grip_sensor/diff_avg_b
+    chown system radio /sys/class/sensors/grip_sensor/fardeb_b
+    chown system radio /sys/class/sensors/grip_sensor/gain_b
+    chown system radio /sys/class/sensors/grip_sensor/grip_ref_cap_b
+    chown system radio /sys/class/sensors/grip_sensor/hysteresis_b
+    chown system radio /sys/class/sensors/grip_sensor/irq_count_b
+    chown system radio /sys/class/sensors/grip_sensor/normal_threshold_b
+    chown system radio /sys/class/sensors/grip_sensor/proxstatus_b
+    chown system radio /sys/class/sensors/grip_sensor/raw_data_b
+    chown system radio /sys/class/sensors/grip_sensor/rawfilt_b
+    chown system radio /sys/class/sensors/grip_sensor/resolution_b
+    chown system radio /sys/class/sensors/grip_sensor/sampling_freq_b
+    chown system radio /sys/class/sensors/grip_sensor/unknown_state_b
+    chown system radio /sys/class/sensors/grip_sensor/useful_avg_b
+    chown system radio /sys/class/sensors/grip_sensor/useful_filt_b
 
     chown system radio /sys/class/sensors/grip_sensor_sub/name
     chown system radio /sys/class/sensors/grip_sensor_sub/vendor
@@ -527,18 +543,15 @@ on post-fs-data
     chown system radio /sys/class/sensors/grip_sensor_sub/gain
     chown system radio /sys/class/sensors/grip_sensor_sub/start
     chown system radio /sys/class/sensors/grip_sensor_sub/normal_threshold
-    chown system radio /sys/class/sensors/grip_sensor_sub/gain_ch2
-    chown system radio /sys/class/sensors/grip_sensor_sub/raw_data_ch2
-    chown system radio /sys/class/sensors/grip_sensor_sub/diff_avg_ch2
-    chown system radio /sys/class/sensors/grip_sensor_sub/normal_threshold_ch2
     chown system radio /sys/class/sensors/grip_sensor_sub/ch_state
     chown system radio /sys/class/sensors/grip_sensor_sub/body_threshold
     chown system radio /sys/class/sensors/grip_sensor_sub/grip_flush
     chown system radio /sys/class/sensors/grip_sensor_sub/irq_count
-    chown system radio /sys/class/sensors/grip_sensor_sub/ch_count
     chown system radio /sys/class/sensors/grip_sensor_sub/resolution
     chown system radio /sys/class/sensors/grip_sensor_sub/adc_filt
     chown system radio /sys/class/sensors/grip_sensor_sub/useful_filt
+    chown system radio /sys/class/sensors/grip_sensor_sub/ch_count
+    chown system radio /sys/class/sensors/grip_sensor_sub/mcc
     chown system radio /sys/class/sensors/grip_sensor_sub/hysteresis
     chown system radio /sys/class/sensors/grip_sensor_sub/sampling_freq
     chown system radio /sys/class/sensors/grip_sensor_sub/isum
@@ -548,11 +561,27 @@ on post-fs-data
     chown system radio /sys/class/sensors/grip_sensor_sub/cdc_down
     chown system radio /sys/class/sensors/grip_sensor_sub/temp_enable
     chown system radio /sys/class/sensors/grip_sensor_sub/cml
-    chown system radio /sys/class/sensors/grip_sensor_sub/noti_enable
-    chown system radio /sys/class/sensors/grip_sensor_sub/motion
-    chown system radio /sys/class/sensors/grip_sensor_sub/unknown_state
     chown system radio /sys/class/sensors/grip_sensor_sub/grip_ref_cap
-    chown system radio /sys/class/sensors/grip_sensor_sub/grip_ref_cap_2ch
+    chown system radio /sys/class/sensors/grip_sensor_sub/analog_gain_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/avg_negfilt_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/avg_posfilt_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/avg_thresh_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/closedeb_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/diff_avg_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/fardeb_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/gain_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/grip_ref_cap_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/hysteresis_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/irq_count_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/normal_threshold_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/proxstatus_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/raw_data_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/rawfilt_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/resolution_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/sampling_freq_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/unknown_state_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/useful_avg_b
+    chown system radio /sys/class/sensors/grip_sensor_sub/useful_filt_b
 
     chown system radio /sys/class/sensors/grip_sensor_sub2/name
     chown system radio /sys/class/sensors/grip_sensor_sub2/vendor
@@ -565,10 +594,10 @@ on post-fs-data
     chown system radio /sys/class/sensors/grip_sensor_sub2/gain
     chown system radio /sys/class/sensors/grip_sensor_sub2/start
     chown system radio /sys/class/sensors/grip_sensor_sub2/normal_threshold
-    chown system radio /sys/class/sensors/grip_sensor_sub2/gain_ch2
-    chown system radio /sys/class/sensors/grip_sensor_sub2/raw_data_ch2
-    chown system radio /sys/class/sensors/grip_sensor_sub2/diff_avg_ch2
-    chown system radio /sys/class/sensors/grip_sensor_sub2/normal_threshold_ch2
+    chown system radio /sys/class/sensors/grip_sensor_sub2/gain_b
+    chown system radio /sys/class/sensors/grip_sensor_sub2/raw_data_b
+    chown system radio /sys/class/sensors/grip_sensor_sub2/diff_avg_b
+    chown system radio /sys/class/sensors/grip_sensor_sub2/normal_threshold_b
     chown system radio /sys/class/sensors/grip_sensor_sub2/ch_state
     chown system radio /sys/class/sensors/grip_sensor_sub2/body_threshold
     chown system radio /sys/class/sensors/grip_sensor_sub2/grip_flush
@@ -578,7 +607,7 @@ on post-fs-data
     chown system radio /sys/class/sensors/grip_sensor_sub2/adc_filt
     chown system radio /sys/class/sensors/grip_sensor_sub2/useful_filt
     chown system radio /sys/class/sensors/grip_sensor_sub2/grip_ref_cap
-    chown system radio /sys/class/sensors/grip_sensor_sub2/grip_ref_cap_2ch
+    chown system radio /sys/class/sensors/grip_sensor_sub2/grip_ref_cap_b
 
     chown system radio /sys/class/sensors/grip_sensor_sub3/name
     chown system radio /sys/class/sensors/grip_sensor_sub3/vendor
@@ -591,10 +620,10 @@ on post-fs-data
     chown system radio /sys/class/sensors/grip_sensor_sub3/gain
     chown system radio /sys/class/sensors/grip_sensor_sub3/start
     chown system radio /sys/class/sensors/grip_sensor_sub3/normal_threshold
-    chown system radio /sys/class/sensors/grip_sensor_sub3/gain_ch2
-    chown system radio /sys/class/sensors/grip_sensor_sub3/raw_data_ch2
-    chown system radio /sys/class/sensors/grip_sensor_sub3/diff_avg_ch2
-    chown system radio /sys/class/sensors/grip_sensor_sub3/normal_threshold_ch2
+    chown system radio /sys/class/sensors/grip_sensor_sub3/gain_b
+    chown system radio /sys/class/sensors/grip_sensor_sub3/raw_data_b
+    chown system radio /sys/class/sensors/grip_sensor_sub3/diff_avg_b
+    chown system radio /sys/class/sensors/grip_sensor_sub3/normal_threshold_b
     chown system radio /sys/class/sensors/grip_sensor_sub3/ch_state
     chown system radio /sys/class/sensors/grip_sensor_sub3/body_threshold
     chown system radio /sys/class/sensors/grip_sensor_sub3/grip_flush
@@ -604,7 +633,7 @@ on post-fs-data
     chown system radio /sys/class/sensors/grip_sensor_sub3/adc_filt
     chown system radio /sys/class/sensors/grip_sensor_sub3/useful_filt
     chown system radio /sys/class/sensors/grip_sensor_sub3/grip_ref_cap
-    chown system radio /sys/class/sensors/grip_sensor_sub3/grip_ref_cap_2ch
+    chown system radio /sys/class/sensors/grip_sensor_sub3/grip_ref_cap_b
 
 # GPU DVFS for SKI
     chown system system /sys/kernel/gpu/gpu_freq_table
@@ -696,9 +725,6 @@ on post-fs-data
     #chown system media /dev/M4U_device
     chmod 0640 /proc/m4u
     chown system media /proc/m4u
-
-    #set mlock limit to infinate (for m4u operation)
-    setrlimit 8 -1 -1
 
     # CMDQ
     chmod 0640 /dev/mtk_mdp
@@ -993,6 +1019,10 @@ on post-fs-data
     # otg_test
     chown root radio /dev/mt_otg_test
     chmod 0660 /dev/mt_otg_test
+
+	#Vibrator
+    chown system system /sys/class/timed_output/vibrator/enable
+    chmod 0644 /sys/class/timed_output/vibrator/enable
 
     # Switch Device
     chown system radio /sys/class/sec/switch/usb_sel
