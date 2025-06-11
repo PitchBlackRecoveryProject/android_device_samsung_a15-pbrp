@@ -1024,6 +1024,10 @@ on post-fs-data
     chown system system /sys/class/timed_output/vibrator/enable
     chmod 0644 /sys/class/timed_output/vibrator/enable
 
+    #Flashlight
+    chmod 0666 /sys/devices/virtual/camera/flash/rear_flash
+    chown system radio /sys/devices/virtual/camera/flash/rear_flash
+	
     # Switch Device
     chown system radio /sys/class/sec/switch/usb_sel
     chown system radio /sys/class/sec/switch/uart_sel

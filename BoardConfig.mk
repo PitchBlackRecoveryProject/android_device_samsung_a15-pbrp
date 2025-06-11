@@ -89,8 +89,8 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 11739856896
 # Platform
 TARGET_BOARD_PLATFORM := mt6789
 
-# touchscreen
-TW_LOAD_VENDOR_MODULES := "zt7650m_ts.ko focaltech_ts_ft3418.ko"
+# touchscreen & flashlight
+TW_LOAD_VENDOR_MODULES := "zt7650m_ts.ko focaltech_ts_ft3418.ko flashlight.ko flashlights-sm5714.ko"
 
 # Recovery
 TARGET_USES_MKE2FS := true
