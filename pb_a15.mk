@@ -12,17 +12,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, vendor/pb/config/common.mk)
 
 # Inherit from a15 device
-$(call inherit-product, device/samsung/a15/device.mk)
+$(call inherit-product, device/samsung/gta8wifi/device.mk)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/a15/recovery/root,recovery/root)
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/gta8wifixx/recovery/root,recovery/root)
 
-PRODUCT_DEVICE := a15
-PRODUCT_NAME := pb_a15
+PRODUCT_DEVICE := gta8wifi
+PRODUCT_NAME := gta8wifixx
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-A155F
+PRODUCT_MODEL := SM-X200
 PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung

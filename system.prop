@@ -1,9 +1,9 @@
 # Device
-ro.display.series=Samsung Galaxy A15
+ro.display.series=Samsung Galaxy Tab A8 10.4
 
 # Platform
-ro.product.board=mt6789
-ro.board.platform=mt6789
+ro.product.board=ums512
+ro.board.platform=ums512
 
 # Dynamic partitions
 ro.boot.dynamic_partitions=true
